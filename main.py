@@ -7,6 +7,29 @@ def object(elements, priority):
 state = True
 
 while state:
-    object(['_', '1'], [0.85, 0.05])
-    #print(results)
-    time.sleep(0.2)
+    results = object(['_', '1'], [0.8, 0.08])
+    base = 'result'
+    if results == '_':
+        print('ground')
+    elif results == '1':
+        print('obstetrical')
+
+    choices = int(input("ENTER THE CHOICES\npress 0 to quit\nPress 1 to jump and press 2 to let it go: "))
+    if choices == 0:
+        print('good bye')
+        state = False
+    elif choices == 1 and results == '1':
+        print('correct choice')
+        pass
+    elif choices == 2 and results == '_':
+        print('correct choice')
+        pass
+    elif choices == 1 and results == '_':
+        print('wrong choice')
+        state = False
+    elif choices == 2 and results == "1":
+        print('You hit a wall')
+        state = False
+    else:
+        print('Invald option')
+        state = False
