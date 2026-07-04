@@ -3,13 +3,8 @@ def object(elements, priority):
     result = random.choices(elements, weights=priority, k=1)[0]
     print(result)
     return(result)
-def statments(results):
-    base = 'result'
-    if results == '_':
-        print('ground')
-    elif results == '1':
-        print('obstetrical')
-    elif choices == 1 and results == '1':
+def statments(results, state):
+    if choices == 1 and results == '1':
         print('correct choice')
         pass
     elif choices == 2 and results == '_':
@@ -25,12 +20,16 @@ state = True
 
 while state:
     ground_state = object(['_', '1'], [0.8, 0.08])
+    if ground_state == '_':
+        print('ground')
+    elif ground_state == '1':
+        print('obstetrical')
     choices = int(input("ENTER THE CHOICES\npress 0 to quit\nPress 1 to jump and press 2 to let it go: "))
     if choices == 0:
         print('good bye')
         state = False
-    elif choices == 1 and 2:
-        statments(ground_state)
+    elif choices == 1 or choices == 2:
+        statments(ground_state, state)
     else:
         print('Invald option')
         state = False
