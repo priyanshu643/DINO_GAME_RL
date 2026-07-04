@@ -4,10 +4,7 @@ def object(elements, priority):
     result = random.choices(elements, weights=priority, k=1)[0]
     print(result)
     return(result)
-state = True
-
-while state:
-    results = object(['_', '1'], [0.8, 0.08])
+def statments(results):
     base = 'result'
     if results == '_':
         print('ground')
@@ -33,3 +30,8 @@ while state:
     else:
         print('Invald option')
         state = False
+state = True
+
+while state:
+    ground_state = object(['_', '1'], [0.8, 0.08])
+    statments(ground_state)
